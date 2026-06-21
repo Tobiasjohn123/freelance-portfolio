@@ -10,10 +10,7 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
-/* KILL ALL FALLBACK TEXT */
-.material-symbols-outlined {
-  font-family: 'Material Symbols Outlined' !important;
-}
+ 
 html, body {
   overflow-x: hidden;
   width: 100%;
@@ -501,15 +498,15 @@ p, li, button, input, textarea {
   }
 }
 
-.trust-item .material-symbols-outlined {
+.trust-item svg {
   color: #4F8EF7;
   font-size: 1.1rem;
 }
 
 @media (max-width: 767px) {
-  .trust-item .material-symbols-outlined {
-    font-size: 0.9rem;
-  }
+.trust-item svg {
+  font-size: 0.9rem;
+}
 }
 
 .hero-glow {
@@ -658,7 +655,7 @@ p, li, button, input, textarea {
   flex-shrink: 0;
 }
 
-.solution-icon-wrapper .material-symbols-outlined {
+.solution-icon-wrapper svg {
   color: var(--primary);
   font-size: 1.5rem;
 }
@@ -1010,14 +1007,14 @@ p, li, button, input, textarea {
   color: var(--text-bright);
 }
 
-.project-link .material-symbols-outlined {
+.project-link svg {
   font-size: 1.1rem;
 }
 
 @media (max-width: 767px) {
-  .project-link .material-symbols-outlined {
-    font-size: 0.9rem;
-  }
+.project-link svg {
+  font-size: 1.1rem;
+}
 }
 
 .project-link.disabled {
