@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0b1124;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#050814;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F8EF7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect width="32" height="32" rx="8" fill="url(#bgGrad)"/>
+
+  <!-- Blue border -->
+  <rect width="32" height="32" rx="8" fill="none" stroke="#4F8EF7" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- TB Text -->
+  <text
+    x="16"
+    y="22"
+    font-family="Space Grotesk, sans-serif"
+    font-weight="700"
+    font-size="13"
+    fill="url(#textGrad)"
+    text-anchor="middle"
+    letter-spacing="-0.5"
+  >TB</text>
+</svg>

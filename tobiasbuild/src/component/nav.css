@@ -1,0 +1,384 @@
+/* ============================================
+   3D GLASS NAV — CHANGA ONE LOGO + INTER LINKS
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=DM+Serif+Display:ital@0;1&family=Roboto+Slab:wght@100..900&display=swap');
+/* ---- Base 3D Glass Pill ---- */
+.navbar-kinetic {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 3rem);
+  max-width: 850px;
+  z-index: 1000;
+  
+  /* 3D Glass Core */
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(10, 15, 30, 0.2) 40%,
+    rgba(10, 15, 30, 0.3) 60%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  
+  /* Extreme blur for glass depth */
+  backdrop-filter: blur(50px) saturate(300%) brightness(1.1);
+  -webkit-backdrop-filter: blur(50px) saturate(300%) brightness(1.1);
+  
+  /* 3D Glass Border */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  
+  /* 3D Shadow Layers */
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.4),
+    inset 0 -1px 2px rgba(255, 255, 255, 0.1),
+    inset 0 0 40px rgba(79, 142, 247, 0.05),
+    0 0 60px rgba(79, 142, 247, 0.08);
+  
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0.6rem 1.75rem;
+}
+
+/* ---- Gradient Backdrop Behind Glass ---- */
+.navbar-kinetic::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 9999px;
+  z-index: -1;
+  
+  background: conic-gradient(
+    from 0deg,
+    rgba(79, 142, 247, 0.15),
+    rgba(0, 242, 254, 0.1),
+    rgba(79, 142, 247, 0.15),
+    rgba(168, 85, 247, 0.1),
+    rgba(79, 142, 247, 0.15)
+  );
+  
+  animation: gradient-shift 12s linear infinite;
+  filter: blur(8px);
+  opacity: 0.8;
+  transition: opacity 0.6s ease;
+}
+
+@keyframes gradient-shift {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ---- Scrolled State ---- */
+.navbar-kinetic.nav-scrolled {
+  top: 1rem;
+  max-width: 720px;
+  
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(6, 9, 21, 0.25) 40%,
+    rgba(6, 9, 21, 0.35) 60%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  
+  backdrop-filter: blur(60px) saturate(350%) brightness(1.05);
+  -webkit-backdrop-filter: blur(60px) saturate(350%) brightness(1.05);
+  
+  border-color: rgba(79, 142, 247, 0.3);
+  box-shadow:
+    0 16px 50px rgba(0, 0, 0, 0.7),
+    0 8px 20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 2px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 2px rgba(255, 255, 255, 0.08),
+    inset 0 0 60px rgba(79, 142, 247, 0.08),
+    0 0 70px rgba(79, 142, 247, 0.12);
+}
+
+.navbar-kinetic.nav-scrolled::before {
+  opacity: 1;
+  filter: blur(6px);
+}
+
+/* ---- Container ---- */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   LOGO — CHANGA ONE
+   ============================================ */
+.nav-logo {
+  font-family: 'Changa One', cursive !important;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+  
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(79, 142, 247, 0.15),
+    0 0 60px rgba(79, 142, 247, 0.05);
+}
+
+/* 3D Glowing Dot */
+.nav-logo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4F8EF7, #00f2fe);
+  box-shadow: 
+    0 0 15px rgba(79, 142, 247, 0.6),
+    0 0 35px rgba(79, 142, 247, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  animation: dot-pulse 2s infinite ease-in-out;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+.nav-logo:hover {
+  opacity: 0.9;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(79, 142, 247, 0.25),
+    0 0 80px rgba(79, 142, 247, 0.1);
+}
+
+/* ============================================
+   MOBILE TOGGLE
+   ============================================ */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #e1e2eb;
+  cursor: pointer;
+  padding: 0.25rem;
+  outline: none;
+  transition: transform 0.3s ease;
+}
+
+.nav-toggle:hover {
+  transform: scale(1.05);
+}
+
+.nav-toggle .material-symbols-outlined {
+  font-size: 1.75rem;
+  transition: transform 0.3s ease;
+}
+
+/* ============================================
+   NAV LINKS — INTER
+   ============================================ */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  position: relative;
+  font-family: "Roboto Slab", serif;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: capitalize;
+  padding: 0.4rem 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ---- 3D Expanding Gradient Underline ---- */
+.nav-underline {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #4F8EF7, #00f2fe, #4F8EF7);
+  background-size: 200% 100%;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 9999px;
+  
+  box-shadow: 
+    0 0 12px rgba(79, 142, 247, 0.4),
+    0 0 25px rgba(79, 142, 247, 0.2);
+}
+
+.nav-link:hover .nav-underline {
+  width: 100%;
+  left: 0;
+}
+
+/* ============================================
+   CTA BUTTON — INTER
+   ============================================ */
+.nav-cta {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #4F8EF7 0%, #2563eb 100%);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  box-shadow: 
+    0 4px 20px rgba(79, 142, 247, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 3D Shimmer Effect */
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 300%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.8s ease;
+}
+
+.nav-cta:hover::before {
+  left: 100%;
+}
+
+.nav-cta:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 8px 35px rgba(79, 142, 247, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #5f9eff 0%, #4F8EF7 100%);
+}
+
+.nav-cta:active {
+  transform: translateY(0px) scale(0.97);
+}
+
+/* ---- Glow Pulse ---- */
+.glow-pulse {
+  animation: pulse-glow 3s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(79, 142, 247, 0.35); }
+  50% { box-shadow: 0 4px 40px rgba(79, 142, 247, 0.55); }
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .navbar-kinetic {
+    top: 1rem;
+    width: calc(100% - 2rem);
+    padding: 0.5rem 1.25rem;
+    backdrop-filter: blur(35px) saturate(250%) brightness(1.05);
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  /* 3D Glass Drop Card */
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    
+    background: #091124;
+    backdrop-filter: blur(40px) saturate(300%) brightness(1.05);
+    -webkit-backdrop-filter: blur(40px) saturate(300%) brightness(1.05);
+    
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.5rem;
+    
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.7),
+      0 8px 24px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      0 0 40px rgba(79, 142, 247, 0.05);
+    
+    opacity: 0;
+    transform: translateY(-15px) scale(0.95);
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+  
+  }
+
+  .nav-link:hover .nav-underline {
+    width: 40%;
+    left: 30%;
+  }
+
+  .nav-cta {
+    width: 80%;
+    text-align: center;
+    padding: 0.7rem;
+    font-size: 0.82rem;
+    margin-top: 0.5rem;
+  }
+}
