@@ -1,13 +1,10 @@
-// src/components/Projects.jsx
 import React from 'react';
+import { MdOpenInNew, MdArrowForward } from 'react-icons/md';
 
 const Projects = () => {
   const projects = [
     {
-    
-
-
-        category: 'Fitness Coaching',
+      category: 'Fitness Coaching',
       title: 'Coach Alex — Fitness Platform',
       description: 'A high-converting coaching website designed to turn visitors into paying clients. Features program showcases, client testimonials, and a direct call-to-action booking flow.',
       tags: ['Conversion Focused', 'Lead Generation', 'Mobile Responsive'],
@@ -47,10 +44,8 @@ const Projects = () => {
     <section className="projects-section" id="projects">
       <div className="container">
         <div className="section-header reveal-up">
-         
           <h2 className="section-title gradient-text">What I've Built</h2>
-          <p className="section-subtitle">
-Real projects. Real results          </p>
+          <p className="section-subtitle">Real projects. Real results</p>
         </div>
 
         <div className="grid-3">
@@ -60,7 +55,6 @@ Real projects. Real results          </p>
               className="glass-card project-card glass-card-hover reveal-up"
               style={{ transitionDelay: `${index * 0.15}s` }}
             >
-              {/* Project Image */}
               <div className="project-image-wrapper">
                 <img
                   src={project.fallbackImage}
@@ -71,8 +65,6 @@ Real projects. Real results          </p>
                   }}
                 />
                 <div className="project-overlay" />
-
-                {/* Live badge */}
                 {project.link !== '#' && (
                   <div className="project-live-badge">
                     <span className="live-dot" />
@@ -81,20 +73,17 @@ Real projects. Real results          </p>
                 )}
               </div>
 
-              {/* Project Content */}
               <div className="project-content">
                 <span className="project-category">{project.category}</span>
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
 
-                {/* Tags */}
                 <div className="project-tags">
                   {project.tags.map((tag, i) => (
                     <span key={i} className="project-tag">{tag}</span>
                   ))}
                 </div>
 
-                {/* Link - Fixed to bottom of card with margin-top: auto */}
                 <a
                   href={project.link}
                   className="project-link"
@@ -103,16 +92,13 @@ Real projects. Real results          </p>
                   onClick={project.link === '#' ? (e) => scrollToSection(e, 'booking') : undefined}
                 >
                   {project.link !== '#' ? 'View Live Project' : 'Book a Consultation'}
-                  <span className="material-symbols-outlined">
-                    {project.link !== '#' ? 'open_in_new' : 'arrow_forward'}
-                  </span>
+                  {project.link !== '#' ? <MdOpenInNew /> : <MdArrowForward />}
                 </a>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Disclaimer */}
         <p className="projects-disclaimer reveal-up">
           All projects are fully functional demonstrations of exactly what I deliver for clients.
         </p>

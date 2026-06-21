@@ -1,5 +1,6 @@
 // src/components/hero.jsx
 import React from 'react';
+import { MdArrowForward, MdVerified, MdBolt, MdForum } from 'react-icons/md';
 
 const Hero = () => {
   const words = "I Build Systems That Book Clients While You Sleep".split(' ');
@@ -31,7 +32,7 @@ const Hero = () => {
 
         <div className="hero-buttons reveal-up">
           <a href="#booking" className="btn-primary">
-            <span className="material-symbols-outlined">arrow_forward</span>
+            <MdArrowForward size={18} />
             Book a Call
           </a>
           <a href="#projects" className="btn-secondary">
@@ -41,15 +42,15 @@ const Hero = () => {
 
         <div className="hero-trust reveal-up">
           <div className="trust-item">
-            <span className="material-symbols-outlined">verified</span>
+            <MdVerified />
             Custom-Built, Not Templated
           </div>
           <div className="trust-item">
-            <span className="material-symbols-outlined">bolt</span>
+            <MdBolt />
             Fast Turnaround
           </div>
           <div className="trust-item">
-            <span className="material-symbols-outlined">forum</span>
+            <MdForum />
             Direct Access — No Agencies
           </div>
         </div>

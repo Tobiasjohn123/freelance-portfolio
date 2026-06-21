@@ -1,5 +1,6 @@
 // src/components/booking.jsx
 import React, { useMemo, useState } from 'react';
+import { MdSchedule, MdVideocam, MdChevronLeft, MdChevronRight, MdCheckCircle } from 'react-icons/md';
 
 const MONTH_NAMES = [
   'January', 'February', 'March', 'April', 'May', 'June',
@@ -10,7 +11,7 @@ const SLOTS = ['09:00 AM', '11:30 AM', '02:00 PM', '04:30 PM'];
 
 const getMonthLayout = (year, month) => {
   const firstDay = new Date(year, month, 1);
-  const startWeekday = (firstDay.getDay() + 6) % 7; // Monday = 0
+  const startWeekday = (firstDay.getDay() + 6) % 7;
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   return { startWeekday, daysInMonth };
 };
@@ -80,22 +81,13 @@ const Booking = () => {
     setSelectedSlot(null);
   };
 
-  // ✅ FINAL REDIRECT FUNCTION
   const handleConfirm = () => {
     if (selectedDate && selectedSlot) {
       setBooked(true);
-      
       setTimeout(() => {
-        // 🔴 YOUR LIVE CALENDLY LINK
         window.location.href = "https://calendly.com/tobias-dev015/30min";
       }, 1500);
     }
-  };
-
-  const handleReset = () => {
-    setSelectedDate(null);
-    setSelectedSlot(null);
-    setBooked(false);
   };
 
   const formattedSelectedDate = selectedDate
@@ -136,11 +128,11 @@ const Booking = () => {
                     <h3 className="meeting-title">15-Min Strategy Session</h3>
                     <div className="meeting-meta">
                       <div className="meta-item">
-                        <span className="material-symbols-outlined">schedule</span>
+                        <MdSchedule size={18} />
                         <span>15 Minutes</span>
                       </div>
                       <div className="meta-item">
-                        <span className="material-symbols-outlined">videocam</span>
+                        <MdVideocam size={18} />
                         <span>Google Meet Link Provided</span>
                       </div>
                     </div>
@@ -161,7 +153,7 @@ const Booking = () => {
                             disabled={isPrevDisabled}
                             type="button"
                           >
-                            <span className="material-symbols-outlined">chevron_left</span>
+                            <MdChevronLeft size={20} />
                           </button>
                           <button
                             className="calendar-nav-btn"
@@ -169,7 +161,7 @@ const Booking = () => {
                             onClick={handleNextMonth}
                             type="button"
                           >
-                            <span className="material-symbols-outlined">chevron_right</span>
+                            <MdChevronRight size={20} />
                           </button>
                         </div>
                       </div>
@@ -235,7 +227,7 @@ const Booking = () => {
                 </>
               ) : (
                 <div className="scheduler-success open">
-                  <span className="material-symbols-outlined success-icon">check_circle</span>
+                  <MdCheckCircle className="success-icon" />
                   <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#ffffff' }}>Session Confirmed!</h3>
                   <p style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: '1.75rem', lineHeight: 1.5 }}>
                     Your system audit is booked for <strong style={{ color: '#ffffff' }}>{formattedSelectedDate}</strong> at <strong style={{ color: '#ffffff' }}>{selectedSlot}</strong>.
@@ -246,9 +238,7 @@ const Booking = () => {
               )}
             </div>
 
-            <p className="booking-email">
-              {/* Prefer email? Reach me at <a href="mailto:tobias@tobiasbuild.dev">tobias@tobiasbuild.dev</a> */}
-            </p>
+            <p className="booking-email"></p>
           </div>
         </div>
       </div>

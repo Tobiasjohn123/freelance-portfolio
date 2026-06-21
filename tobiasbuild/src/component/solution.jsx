@@ -1,20 +1,21 @@
 // src/components/solution.jsx
 import React from 'react';
+import { MdBolt, MdDashboard, MdAnalytics } from 'react-icons/md';
 
 const Solution = () => {
   const features = [
     {
-      icon: 'bolt',
+      icon: MdBolt,
       title: 'Instant Booking System',
       text: 'Seamless integration into your current tech stack with custom styling.'
     },
     {
-      icon: 'dashboard',
+      icon: MdDashboard,
       title: 'Admin Dashboard',
       text: 'Full control over availability, intake forms, and automated reminders.'
     },
     {
-      icon: 'analytics',
+      icon: MdAnalytics,
       title: 'Conversion Focused',
       text: 'Optimized flows designed specifically to reduce friction and drop-offs.'
     }
@@ -24,13 +25,11 @@ const Solution = () => {
     <section className="solution-section">
       <div className="container">
         <div className="grid-lg-2">
-          
-          {/* Left Side: Features List */}
           <div className="solution-list reveal-up">
             {features.map((item, index) => (
               <div key={index} className="solution-item">
                 <div className="solution-icon-wrapper">
-                  <span className="material-symbols-outlined">{item.icon}</span>
+                  <item.icon />
                 </div>
                 <div>
                   <h4 className="solution-item-title">{item.title}</h4>
@@ -40,7 +39,6 @@ const Solution = () => {
             ))}
           </div>
 
-          {/* Right Side: Dashboard Mockup */}
           <div className="solution-visual reveal-up">
             <div className="solution-glass-container">
               <div className="solution-dashboard-mockup">
@@ -81,7 +79,6 @@ const Solution = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
