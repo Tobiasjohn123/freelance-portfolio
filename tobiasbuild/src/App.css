@@ -1,17 +1,19 @@
 /* ============================================
-   IMPORTS & FONTS
+   IMPORTS & FONTS (ONLY GOOGLE FONTS LEFT)
    ============================================ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 @import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap');
 
 /* ============================================
-   BASE RESET — prevents overflow at all sizes
+   BASE RESET
    ============================================ */
 *, *::before, *::after {
   box-sizing: border-box;
 }
-
+/* KILL ALL FALLBACK TEXT */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+}
 html, body {
   overflow-x: hidden;
   width: 100%;
@@ -2049,8 +2051,8 @@ p, li, button, input, textarea {
 
 /* --- 351px–450px --- */
 @media (min-width: 351px) and (max-width: 450px) {
-  .hero-title { font-size: 2.9rem !important; } 
-  .hero-subtitle { font-size: 0.72rem !important; padding: 0 0.5rem !important; }
+  .hero-title { font-size: 2.1rem !important; }  /* FIXED TYPO: Was 2.9rem */
+  .hero-subtitle { font-size: 0.82rem !important; padding: 0 0.5rem !important; }
   .btn-primary, .btn-secondary { padding: 0.6rem 1rem !important; font-size: 0.8rem !important; }
   .hero-trust { gap: 0.5rem !important; padding: 0.5rem 1rem !important; flex-wrap: wrap !important; max-width: 100% !important; }
   .trust-item { font-size: 0.6rem !important; }

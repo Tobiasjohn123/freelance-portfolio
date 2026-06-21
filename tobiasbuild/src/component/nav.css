@@ -382,3 +382,11 @@
     margin-top: 0.5rem;
   }
 }
+
+/* Add this to the top of your nav.css */
+.nav-toggle .material-symbols-outlined {
+  font-size: 1.75rem;
+  font-weight: 400; /* Ensures the fallback text isn't bold */
+  line-height: 1;
+  font-family: 'Material Symbols Outlined';
+}

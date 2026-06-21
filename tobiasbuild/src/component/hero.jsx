@@ -2,14 +2,14 @@
 import React from 'react';
 
 const Hero = () => {
-  const words = "Your Coaching Business Should Book Itself.".split(' ');
+  const words = "I Build Systems That Book Clients While You Sleep".split(' ');
 
   return (
     <section className="hero-section" id="home">
       <div className="hero-glow" aria-hidden="true"></div>
 
       <div className="hero-content">
-        <h1 className="hero-title" aria-label="Your Coaching Business Should Book Itself">
+        <h1 className="hero-title" aria-label="I Build Systems That Book Clients While You Sleep">
           {words.map((word, index) => (
             <React.Fragment key={index}>
               <span
@@ -25,7 +25,9 @@ const Hero = () => {
         </h1>
 
         <p className="hero-subtitle reveal-up">
-Custom booking systems that capture leads and close them while you focus on the work. No manual follow-ups. No missed appointments.</p>
+          Custom-engineered booking infrastructure for high-ticket service providers.
+          We automate the friction so you can focus on the craft.
+        </p>
 
         <div className="hero-buttons reveal-up">
           <a href="#booking" className="btn-primary">
