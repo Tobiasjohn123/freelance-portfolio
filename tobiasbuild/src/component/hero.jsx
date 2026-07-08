@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="hero-glow" aria-hidden="true"></div>
 
       <div className="hero-content">
-        <h1 className="hero-title" aria-label="I Build Systems That Book Clients While You Sleep">
+        <h1 className="hero-title" aria-label="I Build Booking Systems That Turn Your Website Into A Client Machine">
           {words.map((word, index) => (
             <React.Fragment key={index}>
               <span

@@ -1287,11 +1287,14 @@ p, li, button, input, textarea {
   padding: 7rem 0;
 }
 
+
+
 @media (max-width: 767px) {
   .booking-section {
     padding: 4rem 0;
   }
 }
+
 
 .booking-glass {
   background: rgba(11, 17, 36, 0.4);
@@ -1301,6 +1304,7 @@ p, li, button, input, textarea {
   border-radius: 1.75rem;
   padding: 0.25rem;
   box-shadow: 0 25px 55px rgba(0, 0, 0, 0.4);
+  
 }
 
 @media (max-width: 767px) {
@@ -1705,6 +1709,16 @@ p, li, button, input, textarea {
   display: none;
 }
 
+/* @media (max-width: 1024px) {
+  .scheduler-success.open {
+  display: flex; 
+  justify-content: center;
+  align-content: center;
+}
+} */
+
+
+
 @media (max-width: 767px) {
   .scheduler-confirm-btn {
     padding: 0.6rem;
@@ -1737,17 +1751,21 @@ p, li, button, input, textarea {
   background: rgba(79, 142, 247, 0.15);
 }
 
-.scheduler-success {
-  display: none;
+/* Force the success message to span the full width of the scheduler widget */
+.scheduler-success.open {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem 1.5rem;
   text-align: center;
+  width: 100%;
+  min-height: 350px;
+  grid-column: 1 / -1;
+  padding: 2rem;
 }
 
 .scheduler-success.open {
-  display: flex;
+ display: block;
 }
 
 @media (max-width: 767px) {

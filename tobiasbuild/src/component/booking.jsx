@@ -1,6 +1,7 @@
 // src/components/booking.jsx
 import React, { useMemo, useState } from 'react';
-import { MdSchedule, MdVideocam, MdChevronLeft, MdChevronRight, MdCheckCircle } from 'react-icons/md';
+import { MdSchedule, MdVideocam, MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import SuccessMessage from './succes'; // 👈 Import the separated component
 
 const MONTH_NAMES = [
   'January', 'February', 'March', 'April', 'May', 'June',
@@ -88,6 +89,12 @@ const Booking = () => {
         window.location.href = "https://calendly.com/tobias-dev015/30min";
       }, 1500);
     }
+  };
+
+  const handleReset = () => {
+    setSelectedDate(null);
+    setSelectedSlot(null);
+    setBooked(false);
   };
 
   const formattedSelectedDate = selectedDate
@@ -226,19 +233,13 @@ const Booking = () => {
                   </div>
                 </>
               ) : (
-                <div className="scheduler-success open">
-                  <MdCheckCircle className="success-icon" />
-                  <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#ffffff' }}>Session Confirmed!</h3>
-                  <p style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: '1.75rem', lineHeight: 1.5 }}>
-                    Your system audit is booked for <strong style={{ color: '#ffffff' }}>{formattedSelectedDate}</strong> at <strong style={{ color: '#ffffff' }}>{selectedSlot}</strong>.
-                    <br />
-                    You will be redirected to complete your booking details.
-                  </p>
-                </div>
+                <SuccessMessage 
+                  formattedSelectedDate={formattedSelectedDate}
+                  selectedSlot={selectedSlot}
+                  onReset={handleReset}
+                />
               )}
             </div>
-
-            <p className="booking-email"></p>
           </div>
         </div>
       </div>
