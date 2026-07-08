@@ -3,14 +3,14 @@ import React from 'react';
 import { MdArrowForward, MdVerified, MdBolt, MdForum } from 'react-icons/md';
 
 const Hero = () => {
-  const words = "I Build Booking Systems That Turn Your Website Into A Client Machine".split(' ');
+  const words = "I Build Websites That Turn Visitors Into Clients".split(' ');
 
   return (
     <section className="hero-section" id="home">
       <div className="hero-glow" aria-hidden="true"></div>
 
       <div className="hero-content">
-        <h1 className="hero-title" aria-label="I Build Booking Systems That Turn Your Website Into A Client Machine">
+        <h1 className="hero-title" aria-label="I Build Websites That Turn Visitors Into Clients">
           {words.map((word, index) => (
             <React.Fragment key={index}>
               <span
@@ -26,8 +26,7 @@ const Hero = () => {
         </h1>
 
         <p className="hero-subtitle reveal-up">
-          Custom-engineered booking infrastructure for high-ticket service providers.
-          We automate the friction so you can focus on the craft.
+         Custom-engineered web platforms with booking, automation, and conversion built in for service businesses that need more than a template.
         </p>
 
         <div className="hero-buttons reveal-up">
