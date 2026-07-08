@@ -28,7 +28,7 @@ const Projects = () => {
       tags: ['Consultation Booking', 'Trust Design', 'Mobile Responsive'],
       image: null,
       fallbackImage: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80',
-      link: '#',
+      link: 'https://law-firm-website-gray.vercel.app/',
     },
   ];
 
