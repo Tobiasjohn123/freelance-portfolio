@@ -3,7 +3,7 @@ import React from 'react';
 import { MdArrowForward, MdVerified, MdBolt, MdForum } from 'react-icons/md';
 
 const Hero = () => {
-  const words = "I Build Systems That Book Clients While You Sleep".split(' ');
+  const words = "I Build Booking Systems That Turn Your Website Into A Client Machine".split(' ');
 
   return (
     <section className="hero-section" id="home">
